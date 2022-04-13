@@ -17,6 +17,13 @@ import (
 * 修改历史 : 1. [2022/4/13 10:21] 创建文件 by LongYong
 */
 
+const (
+	PROXY4G_VERSION = "proxy4go-v1.0.0"
+	PROXY4G_MAJOR   = 1
+	PROXY4G_MINOR   = 0
+	PROXY4G_BUILD   = 0
+)
+
 var InvocationProxy = invocationProxy{}
 
 type invocationProxy struct {
