@@ -19,7 +19,7 @@ type InvocationMethod struct {
 	Type reflect.Type
 }
 
-func (im InvocationMethod) invoke(obj any, args []reflect.Value) []reflect.Value {
+func (im InvocationMethod) Invoke(obj any, args []reflect.Value) []reflect.Value {
 	v := reflect.ValueOf(obj).MethodByName(im.Name)
 
 	if !v.IsValid() {

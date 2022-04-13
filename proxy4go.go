@@ -17,11 +17,16 @@ import (
 * 修改历史 : 1. [2022/4/13 10:21] 创建文件 by LongYong
 */
 
+var InvocationProxy = invocationProxy{}
+
+type invocationProxy struct {
+}
+
 type InvocationHandler func(obj any, method InvocationMethod, args []reflect.Value) []reflect.Value
 
 var logger = log4go.LoggerManager.GetLogger("gohutool.boot4go.proxy")
 
-func newProxyInstance(itf any, handler InvocationHandler) any {
+func (ip invocationProxy) NewProxyInstance(itf any, handler InvocationHandler) any {
 
 	t := reflect.TypeOf(itf)
 
